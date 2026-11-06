@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Strips VRE_PerfectBody's body overlay, only with Scrubdaddy's Bodies Compatibility Patches (dfifd.sbcp),
+       whose darker replacement art multiplies with the skin colour. Everyone else keeps VRE's look. -->
+
+  <!-- No furDef means no fur node is ever built, which also leaves VEF's useSkinColorForFur hook inert. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/GeneDef[defName="VRE_PerfectBody"]/fur</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/GeneDef[defName="VRE_PerfectBody"]/fur</xpath>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/GeneDef[defName="VRE_PerfectBody"]/renderNodeProperties</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/GeneDef[defName="VRE_PerfectBody"]/renderNodeProperties</xpath>
+    </match>
+  </Operation>
+
+  <!-- The overlay hid tattoos; with the normal body showing they can show again. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/GeneDef[defName="VRE_PerfectBody"]/tattoosVisible</xpath>
+    <match Class="PatchOperationRemove">
+      <xpath>Defs/GeneDef[defName="VRE_PerfectBody"]/tattoosVisible</xpath>
+    </match>
+  </Operation>
+</Patch>

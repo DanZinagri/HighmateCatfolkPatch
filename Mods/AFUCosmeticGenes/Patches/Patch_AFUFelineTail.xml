@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- With AFU Cosmetic Gene Expanded (JintuziLamian.Gene.XenoCosmetic) loaded, VRE's feline tail borrows the look of AFU's AFU_BA_LovelyCatTail -->
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/GeneDef[defName="VRE_FelineTail"]/renderNodeProperties</xpath>
+    <match Class="PatchOperationReplace">
+      <xpath>Defs/GeneDef[defName="VRE_FelineTail"]/renderNodeProperties</xpath>
+      <value>
+        <renderNodeProperties>
+          <li>
+            <nodeClass>BetterGeneGraphicsFramework.PawnRenderNode_GeneAttachment</nodeClass>
+            <workerClass>BetterGeneGraphicsFramework.PawnRenderNodeWorker_GeneBodyAttachment</workerClass>
+            <parentTagDef>Body</parentTagDef>
+            <colorType>Hair</colorType>
+            <useRottenColor>true</useRottenColor>
+            <useSkinShader>false</useSkinShader>
+            <rotDrawMode>Fresh, Rotting</rotDrawMode>
+            <texPaths>
+              <li>Things/Pawn/Humanlike/AFUBodyAttachments/LovelyCatTail/LovelyCatTailA</li>
+              <li>Things/Pawn/Humanlike/AFUBodyAttachments/LovelyCatTail/LovelyCatTailE</li>
+              <li>Things/Pawn/Humanlike/AFUBodyAttachments/LovelyCatTail/LovelyCatTailF</li>
+            </texPaths>
+            <visibleFacing>
+              <li>East</li>
+              <li>North</li>
+              <li>West</li>
+            </visibleFacing>
+            <drawData>
+              <defaultData>
+                <layer>1</layer>
+              </defaultData>
+              <dataNorth>
+                <layer>90</layer>
+              </dataNorth>
+            </drawData>
+          </li>
+        </renderNodeProperties>
+      </value>
+    </match>
+  </Operation>
+
+  <!-- BGGF's worker reads the per-body-type offsets from the gene that owns the node, so the
+       extension has to sit on VRE's gene. It has no modExtensions yet, hence add-or-create. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/GeneDef[defName="VRE_FelineTail"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/GeneDef[defName="VRE_FelineTail"]/modExtensions</xpath>
+      <value>
+        <li Class="BetterGeneGraphicsFramework.WithBodyTypeOffset">
+          <disableBodyTypeScaleForAdult>true</disableBodyTypeScaleForAdult>
+          <bodyTypeOffsetNorth>
+            <male>(0,0,-0.35)</male>
+            <female>(0,0,-0.32)</female>
+            <hulk>(0,0,-0.5)</hulk>
+            <fat>(0,0,-0.3)</fat>
+            <thin>(0,0,-0.32)</thin>
+            <baby>(0,0,0)</baby>
+            <child>(0,0,-0.22)</child>
+            <femaleBB>(0,0,-0.32)</femaleBB>
+          </bodyTypeOffsetNorth>
+          <bodyTypeOffsetSouth>
+            <male>(0,0,0)</male>
+            <female>(0,0,0)</female>
+            <hulk>(0,0,0)</hulk>
+            <fat>(0,0,0)</fat>
+            <thin>(0,0,0)</thin>
+            <baby>(0,0,0)</baby>
+            <child>(0,0,0)</child>
+            <femaleBB>(0,0,0)</femaleBB>
+          </bodyTypeOffsetSouth>
+          <bodyTypeOffsetEast>
+            <male>(0,0,0)</male>
+            <female>(-0.04,0,0)</female>
+            <hulk>(-0.15,0,-0.05)</hulk>
+            <fat>(-0.26,0,0)</fat>
+            <thin>(0.01,0,0.03)</thin>
+            <child>(0,0,0.05)</child>
+            <baby>(0.05,0,0.06)</baby>
+            <femaleBB>(-0.04,0,0)</femaleBB>
+          </bodyTypeOffsetEast>
+        </li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/GeneDef[defName="VRE_FelineTail"]</xpath>
+      <value>
+        <modExtensions>
+          <li Class="BetterGeneGraphicsFramework.WithBodyTypeOffset">
+            <disableBodyTypeScaleForAdult>true</disableBodyTypeScaleForAdult>
+            <bodyTypeOffsetNorth>
+              <male>(0,0,-0.35)</male>
+              <female>(0,0,-0.32)</female>
+              <hulk>(0,0,-0.5)</hulk>
+              <fat>(0,0,-0.3)</fat>
+              <thin>(0,0,-0.32)</thin>
+              <baby>(0,0,0)</baby>
+              <child>(0,0,-0.22)</child>
+              <femaleBB>(0,0,-0.32)</femaleBB>
+            </bodyTypeOffsetNorth>
+            <bodyTypeOffsetSouth>
+              <male>(0,0,0)</male>
+              <female>(0,0,0)</female>
+              <hulk>(0,0,0)</hulk>
+              <fat>(0,0,0)</fat>
+              <thin>(0,0,0)</thin>
+              <baby>(0,0,0)</baby>
+              <child>(0,0,0)</child>
+              <femaleBB>(0,0,0)</femaleBB>
+            </bodyTypeOffsetSouth>
+            <bodyTypeOffsetEast>
+              <male>(0,0,0)</male>
+              <female>(-0.04,0,0)</female>
+              <hulk>(-0.15,0,-0.05)</hulk>
+              <fat>(-0.26,0,0)</fat>
+              <thin>(0.01,0,0.03)</thin>
+              <child>(0,0,0.05)</child>
+              <baby>(0.05,0,0.06)</baby>
+              <femaleBB>(-0.04,0,0)</femaleBB>
+            </bodyTypeOffsetEast>
+          </li>
+        </modExtensions>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>

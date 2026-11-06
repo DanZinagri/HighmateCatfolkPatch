@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Anchor gene for the Facial Animation earless head (Mods/FacialAnimation). -->
+  <GeneDef ParentName="GeneNoseBase">
+    <defName>DZ_HighmateCatfolkHead</defName>
+    <label>highmate catfolk head</label>
+    <description>Carriers of this gene have a soft, earless feline head that frames their cat ears.</description>
+    <!-- Built from the mod's own art: earless head + feline ears (south), neutral grey, VRE icon style. -->
+    <iconPath>UI/Icons/Genes/Gene_DZ_HighmateCatfolkHead</iconPath>
+    <biostatCpx>0</biostatCpx>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>410.3</displayOrderInCategory>
+    <selectionWeight>0</selectionWeight>
+    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+  </GeneDef>
+
+</Defs>

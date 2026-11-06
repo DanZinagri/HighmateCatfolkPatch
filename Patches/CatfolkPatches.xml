@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Feline ears: two-tone -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/GeneDef[defName="VRE_FelineEars"]/renderNodeProperties</xpath>
+		<match Class="PatchOperationReplace">
+		<xpath>Defs/GeneDef[defName="VRE_FelineEars"]/renderNodeProperties</xpath>
+		<value>
+			<renderNodeProperties Inherit="False">
+				<li Class="BigAndSmall.PawnRenderingProps_Ultimate">
+					<nodeClass>BigAndSmall.PawnRenderNode_UltimateHead</nodeClass>
+					<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+					<parentTagDef>Head</parentTagDef>
+					<rotDrawMode>Fresh, Rotting</rotDrawMode>
+					<conditionalGraphics>
+						<texturePaths>
+							<li>Things/Pawn/Humanlike/BodyParts/FelineEars/FelineEars</li>
+						</texturePaths>
+						<colorA>
+							<hairColor>true</hairColor>
+						</colorA>
+						<colorB>
+							<skinColor>true</skinColor>
+						</colorB>
+					</conditionalGraphics>
+					<drawData>
+						<defaultData>
+							<layer>70</layer>
+						</defaultData>
+					</drawData>
+				</li>
+			</renderNodeProperties>
+		</value>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/GeneDef[defName="VRE_HighmateHair"]/hairTagFilter/tags[not(li[text()="HairLong"])]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/GeneDef[defName="VRE_HighmateHair"]/hairTagFilter/tags</xpath>
+			<value>
+				<li>HairLong</li>
+			</value>
+		</match>
+	</Operation>
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/XenotypeDef[defName="Highmate"]/genes[li[text()="VRE_FelineEars"]][not(li[text()="DZ_HighmateCatfolkHead"])]</xpath>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+			<value>
+				<li>DZ_HighmateCatfolkHead</li>
+			</value>
+		</match>
+	</Operation>
+
+</Patch>

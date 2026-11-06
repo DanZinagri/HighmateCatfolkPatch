@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<loadFolders>
+  <v1.6>
+    <li>/</li>
+    <!-- Both conditions on one entry: FA present AND VTE Facial Animation absent. -->
+    <li IfModActive="Nals.FacialAnimation" IfModNotActive="VanillaExpanded.VTEXE.FacialAnims">Mods/FacialAnimation</li>
+    <li IfModActive="JintuziLamian.Gene.XenoCosmetic">Mods/AFUCosmeticGenes</li>
+    <li IfModActive="dfifd.sbcp">Mods/ScrubdaddyBodies</li>
+  </v1.6>
+  <v1.7>
+    <li>/</li>
+    <!-- Both conditions on one entry: FA present AND VTE Facial Animation absent. -->
+    <li IfModActive="Nals.FacialAnimation" IfModNotActive="VanillaExpanded.VTEXE.FacialAnims">Mods/FacialAnimation</li>
+    <li IfModActive="JintuziLamian.Gene.XenoCosmetic">Mods/AFUCosmeticGenes</li>
+    <li IfModActive="dfifd.sbcp">Mods/ScrubdaddyBodies</li>
+  </v1.7>
+</loadFolders>

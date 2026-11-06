@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModMetaData>
+<name>VRE Highmate Catfolk Patch</name>
+    <author>DanZinagri</author>
+    <packageId>DanZinagri.HighmateCatfolkPatch</packageId>
+    <description>Patches the visuals of highmates</description>
+    <supportedVersions>
+     <li>1.6</li>
+     <li>1.7</li>
+    </supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>vanillaracesexpanded.highmate</packageId>
+			<displayName>Vanilla Races Expanded - Highmate</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2995385834</steamWorkshopUrl>
+		</li>
+		<li>
+			<packageId>RedMattis.BetterPrerequisites</packageId>
+			<displayName>Big and Small - Framework</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2925432336</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>vanillaracesexpanded.highmate</li>
+		<li>RedMattis.BetterPrerequisites</li>
+    </loadAfter>
+</ModMetaData> 

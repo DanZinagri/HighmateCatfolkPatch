@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- VRE's feline tail swaps the pawn to Big and Small's tailed humanoid race.. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/GeneDef[defName="VRE_FelineTail"]/modExtensions</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/GeneDef[defName="VRE_FelineTail"]/modExtensions</xpath>
+      <value>
+        <li Class="BigAndSmall.PawnExtension">
+          <thingDefSwap>BS_HumanoidWithTail</thingDefSwap>
+        </li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationConditional">
+      <xpath>Defs/GeneDef[defName="VRE_FelineTail"]</xpath>
+      <match Class="PatchOperationAdd">
+        <xpath>Defs/GeneDef[defName="VRE_FelineTail"]</xpath>
+        <value>
+          <modExtensions>
+            <li Class="BigAndSmall.PawnExtension">
+              <thingDefSwap>BS_HumanoidWithTail</thingDefSwap>
+            </li>
+          </modExtensions>
+        </value>
+      </match>
+    </nomatch>
+  </Operation>
+</Patch>
