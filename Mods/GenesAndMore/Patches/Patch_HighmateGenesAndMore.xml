@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Highmates get two Big and Small - Genes & More genes (RedMattis.BigSmall.Core):
+       - BS_Glamour: psychic beauty/social boost, active from normal psychic sensitivity up
+         (Highmates have PsychicAbility_Enhanced). Its BS_Beauty exclusion tag is only shared with
+         the Beauty TRAIT, not the Beauty_Beautiful gene, so Highmates keep "beautiful".
+       - BS_GeneStabilizing_Moderate ("gene stabilizing"): the base tier; Highmates carry no cell
+         instability gene for it to conflict with.
+       Each is added only if absent. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/XenotypeDef[defName="Highmate"]/genes[not(li[text()="BS_Glamour"])]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+      <value>
+        <li>BS_Glamour</li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/XenotypeDef[defName="Highmate"]/genes[not(li[text()="BS_GeneStabilizing_Moderate"])]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+      <value>
+        <li>BS_GeneStabilizing_Moderate</li>
+      </value>
+    </match>
+  </Operation>
+</Patch>

@@ -6,6 +6,9 @@
     <li IfModActive="Nals.FacialAnimation" IfModNotActive="VanillaExpanded.VTEXE.FacialAnims">Mods/FacialAnimation</li>
     <li IfModActive="JintuziLamian.Gene.XenoCosmetic">Mods/AFUCosmeticGenes</li>
     <li IfModActive="dfifd.sbcp">Mods/ScrubdaddyBodies</li>
+    <!-- Catfolk only defines DZ_NineLives when EBSG is loaded, so both are required. -->
+    <li IfModActiveAll="DanZinagri.BigSmall.Catfolk,EBSG.Framework">Mods/CatfolkNineLives</li>
+    <li IfModActive="RedMattis.BigSmall.Core">Mods/GenesAndMore</li>
   </v1.6>
   <v1.7>
     <li>/</li>
@@ -13,5 +16,8 @@
     <li IfModActive="Nals.FacialAnimation" IfModNotActive="VanillaExpanded.VTEXE.FacialAnims">Mods/FacialAnimation</li>
     <li IfModActive="JintuziLamian.Gene.XenoCosmetic">Mods/AFUCosmeticGenes</li>
     <li IfModActive="dfifd.sbcp">Mods/ScrubdaddyBodies</li>
+    <!-- Catfolk only defines DZ_NineLives when EBSG is loaded, so both are required. -->
+    <li IfModActiveAll="DanZinagri.BigSmall.Catfolk,EBSG.Framework">Mods/CatfolkNineLives</li>
+    <li IfModActive="RedMattis.BigSmall.Core">Mods/GenesAndMore</li>
   </v1.7>
 </loadFolders>

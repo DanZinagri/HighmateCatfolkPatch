@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <!-- Highmates get Big and Small - Catfolk's nine lives gene. The gene only exists when Catfolk
+       loads its EBSG folder, so this folder needs BOTH mods (LoadFolders IfModActiveAll). Catfolk
+       also makes nine lives exclusive with vanilla Deathless; Highmates carry neither otherwise. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/XenotypeDef[defName="Highmate"]/genes[not(li[text()="DZ_NineLives"])]</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/XenotypeDef[defName="Highmate"]/genes</xpath>
+      <value>
+        <li>DZ_NineLives</li>
+      </value>
+    </match>
+  </Operation>
+</Patch>
